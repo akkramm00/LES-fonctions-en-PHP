@@ -20,6 +20,15 @@ function sayHello(string $firstName = 'John' , string $lastName = 'Doe'): string
  $message = sayHello('Houss' , 'elYaacoubi');
  echo $message ;
 
+// création d'une fonction :
+
+function stopWorking(string $firstName = 'X' , string $lastName = 'Y'):string
+  {
+    $currentTime = date('H:i');
+    return "Bonjour " . $firstName . " " . $lastName .",". " il est " . $currentTime . ". " . "Vous devez quiter votre poste de travail !. Bonne soirée .";
+  }
+echo $message = stopWorking('antoine' , 'Rootello');
+
 
 
 ?> 
