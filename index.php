@@ -64,7 +64,7 @@ function multiply(int $x , int $y): int
     return $x * $y ;
   }
 
-echo mutiply(1, 2);
+echo multiply(1, 2);
 echo multiply(...[1, 2]);
 echo"<br>" ;
 
@@ -72,9 +72,37 @@ echo"<br>" ;
 echo multiply(...[1, 2, 3]);
 echo"<br>" ;
 
+// passage des arguments par "valeur":
+ // ===> ph p utilose par défaut le passage par valeur :
+// ### il existe pliusieurs maniètres de fournir ou passer des arguments a une fonction. Le passage par valeur (ou par copir) et le passage par référence sont les plus connus. PHP utilise pae défaut le passage poar valeur .
+
+function sayHi(string $firstName = 'John')
+  {
+    // on modifie $firstName pour la mettre en majuscule avec strtoupper
+    $firstName = strtoupper($firstName);
+    echo 'Bonjour ' . $firstName. ' ! ' . PHP_EOL ;
+  }
+  $someone = 'eve' ;
+    // Passage par valeur 
+    sayHi($someone);
+    // la valeur de $someone n'as pas été modifiée
+    echo $someone;
+
+// on priviligie toujour sle passage par valeur car les références ajoutent de la compléxité au code ainsi que de potentiels bugs.
+// le passage par valeur est plus simple aà utiliser et donc a maintenir .
 
 
+//les arguments nommés .
+##  PHP 80 introduit les arguments nommés . Cette fonctionnalité permet  de ^passer des arguments à une fonction en s'appuyant sur le nom des paramétres et nopn plus sur leurs positions . Prenons l'exemple de la fonction array_fill() dont la signature fournie sur la documentation officielle ,est la suivante /
+                                                                                       
+array_fill(int $start_index , int $count , mixed $value):array ;
+  ## ccette fonction initialise un tableau d'une certaine taille
+       // $count => fixe la taille d'un tableau 
+       // $value => donne la valeur a chaque element du tableau ;
+       // $start_index => definit à quel index on souhaite démarrer le tableau.
 
+
+  $foo = array_fill(value: 'Bonjour !' , count : 100 , start) ;
   
 ?> 
 
